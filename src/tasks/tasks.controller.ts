@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Body } from '@nestjs/common';
 
 @Controller('tasks')
 export class TasksController {
@@ -8,7 +8,18 @@ export class TasksController {
   }
 
   @Post()
-  createTask(): string {
+  createTask(@Body() task): string {
+    console.log(task);
     return 'Creating task...';
+  }
+
+  @Put()
+  updateTask(): string {
+    return 'Updating task...';
+  }
+
+  @Delete()
+  deleteTask(): string {
+    return 'deleting a task...';
   }
 }
