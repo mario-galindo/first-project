@@ -24,6 +24,8 @@ export class TasksController {
 
   @Put(':id')
   updateTask(@Body() taskToUpdate: CreateTaskDto, @Param('id') id): string {
+    console.log(taskToUpdate);
+    console.log(id);
     return 'Updating task...';
   }
 
