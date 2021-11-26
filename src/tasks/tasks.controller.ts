@@ -8,13 +8,16 @@ import {
   Param,
 } from '@nestjs/common';
 import { CreateTaskDto } from './dto/create-task.dto';
-import { Request, Response } from 'express';
+import { TasksService } from './tasks.service';
+import { Task } from './interfaces/Task';
 
 @Controller('tasks')
 export class TasksController {
+  constructor(private taskService: TasksService) {}
+
   @Get()
-  getTasks(): { hello: string } {
-    return { hello: 'world' };
+  getTasks(): Task[] {
+    return this.taskService.getTasks();
   }
 
   @Post()
