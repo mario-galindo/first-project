@@ -20,6 +20,11 @@ export class TasksController {
     return this.taskService.getTasks();
   }
 
+  @Get(':id')
+  getTask(@Param('id') id: string): Task {
+    return this.taskService.getTask(parseInt(id));
+  }
+
   @Post()
   createTask(@Body() task: CreateTaskDto): string {
     console.log(task.title);
