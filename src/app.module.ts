@@ -9,7 +9,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 @Module({
   imports: [
     TasksModule,
-    MongooseModule.forRoot('mongodb://localhost:27017/nest-tutorial', {
+    MongooseModule.forRoot('mongodb://localhost:27017/nest', {
       useNewUrlParser: true,
     }),
   ],
